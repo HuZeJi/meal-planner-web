@@ -1,0 +1,75 @@
+<!-- <input type="datetime-local" name="selected-week" id="selected-week">
+<!-- TODO: label to show the week range -->
+ <!-- <div class="week-range">
+     <button (click)="onMoveWeek( -1 )"><-</button>
+    <p>{{ weekStartDate | date: 'dd-MM-yyyy' }} - {{ weekEndDate | date: 'dd-MM-yyyy' }}</p>
+    <button (click)="onMoveWeek( 1 )">-></button>
+    <button (click)="onMoveToToday()">today</button>
+ </div>
+
+@for ( dailyPlan of dailyPlans; track $index ) {
+    <strong class="daily-plan">{{ dailyPlan.dayOfTheWeek }}</strong>
+    @for ( meal of dailyPlan.meals; track $index ) {
+        <div class="text-field">
+            <div class="text-field-title">
+                <label for="breakfast">{{ meal.name }}</label>
+                <button disabled>🧙‍♀️</button>
+            </div>
+            <textarea name="breakfast" id="breakfast" [(ngModel)]="meal.description"></textarea>
+        </div>
+    }
+    <button disabled>+ add meal</button>
+    <hr>
+}
+<button (click)="onSaveWeeklyPlan()">save 💾</button> -->
+
+<app-weekly-selector (onDateChange)="onChangeWeekSearch( $event )"></app-weekly-selector>
+@if ( weeklyPlan ) {
+    
+    <div class="plan-nav">
+        <ul>
+            @for ( dailyPlan of weeklyPlan.dailyPlans; track $index) {
+                <li (click)="onSelectDay( dailyPlan )" [ngClass]="{ 'selected': ( dailyPlan.id === selectedDailyPlan.id )}">
+                    <strong>{{ dailyPlan.dayOfWeek }}</strong>
+                    <small>{{ dailyPlan.date | date: 'dd / MM / yyyy' }}</small>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="meal-nav">
+        <ul>
+            @for ( meal of selectedDailyPlan.meals; track $index ) {
+                <li (click)="onSelectMeal( meal )" [ngClass]="{ 'selected': ( meal.name === selectedMeal.name )}">
+                    <strong>{{ meal.name }}</strong>
+                    <!-- add meal hours here -->
+                    <!-- <small>{{ meal. }}</small> -->
+                </li>
+            }
+        </ul>
+    </div>
+    
+    <main>
+        <div class="nav_bar">
+            <ul class="day_selector"></ul>
+            <ul class="meal_selector"></ul>
+        </div>
+        <div class="meal_editor">
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" [(ngModel)]="selectedMeal.name">
+    
+            <label for="description">description</label>
+            <input type="text" name="description" id="description" [(ngModel)]="selectedMeal.description">
+    
+            <label for="recipe">recipe</label>
+            <input type="text" name="recipe" id="recipe" [(ngModel)]="selectedMeal.recipe">
+    
+            <label for="ingredients">ingredients</label>
+            <input type="text" name="ingredients" id="ingredients" [(ngModel)]="selectedMeal.ingredients">
+    
+            <div class="actions">
+                <button class="cancel_btn" (click)="onCancelMeal()">cancel</button>
+                <button class="save_btn" (click)="onSaveMeal()">save meal plan!</button>
+            </div>
+        </div>
+    </main>
+}

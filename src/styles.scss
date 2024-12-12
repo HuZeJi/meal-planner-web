@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+// variables with color values
+$orange: #F2A950;
+$green: #04D9D9;
+$blue: #007AFF;
+$red: #FF2D55;
+$grey: #E6E6E6;
+$dark-grey: #808080;
+$purple: #AC79F2;
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #FAFAFA;
+}
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.orange { background-color: #F2A950; }
+.green { background-color: #04D9D9; }
+.blue { background-color: #007AFF; }
+.red { background-color: #FF2D55; }
+.grey { background-color: #E6E6E6; }
+.purple { background-color: #AC79F2; }
+
+// button resetter
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-circle, .btn-cilinder{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.btn-cilinder {
+    width: 75px;
+}
+

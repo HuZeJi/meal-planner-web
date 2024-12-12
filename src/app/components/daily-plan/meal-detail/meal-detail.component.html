@@ -1,0 +1,27 @@
+@if( meal ) {
+    <main>
+        <div class="header">
+            <div class="image">
+                {{ meal.image }}
+            </div>
+            <h1>{{ meal.name }}</h1>
+        </div>
+        <p class="description">{{ meal.description }}</p>
+        <p class="recipe">{{ meal.recipe }}</p>
+        <p class="ingredients">{{ meal.ingredients }}</p>
+        <div class="footer">
+            <div class="nutritional-info">
+                <div class="facts">
+                    <div class="fact">150 calories</div>
+                    <div class="fact">150g sugar</div>
+                    <div class="fact">150g protein</div>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="update"></button>
+                <button class="create"></button>
+                <button class="delete"></button>
+            </div>
+        </div>
+    </main>
+}

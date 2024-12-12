@@ -1,0 +1,53 @@
+@if ( dailyPlan ) {
+    <main>
+        <app-header-summary [dailyPlan]="dailyPlan"></app-header-summary>
+        <app-meal-nav [dailyPlan]="dailyPlan" (selectMeal)="onSelectMeal( $event )"></app-meal-nav>
+        <app-meal-detail [meal]="selectedMeal"></app-meal-detail>
+        <!-- <input 
+            type="datetime-local" 
+            name="week_search" 
+            id="week_search" 
+            [(ngModel)]="weekSearch"
+            (ngModelChange)="searchWeek()"
+        >
+        <ul> -->
+            <!-- TODO: move this to a component itself -->
+            <!-- @for ( dailyPlan of weeklyPlan.dailyPlans; track $index ) {
+                <li>
+                    <div class="daily-plan-header">
+                        <h3>{{ dailyPlan.dayOfWeek }}</h3>
+                        <small>{{ dailyPlan.date | date: 'dd-MM-yyyy' }}</small>
+                    </div>
+                    @for (meal of dailyPlan.meals; track $index) {
+                        <button class="meal">
+                            <div>
+                                <h4>{{ meal.name }}</h4>
+                                <p>{{ meal.description }}</p>
+                            </div>
+                        </button>
+                    }
+                    <button (click)="onSelectDailyDetail( dailyPlan )">...</button>
+                </li>
+            }
+        </ul>
+        <button (click)="onGenerateShoppingList()">generate list 📕</button> -->
+
+        <!-- out of canvas -->
+        <!-- @if ( selectedDailyPlan ) {
+            <app-daily-detail 
+                [dailyPlan]="selectedDailyPlan"
+                (onCloseDailyDetail)="onCloseDailyDetail( $event )"
+                class="modal"
+            ></app-daily-detail>
+        } -->
+
+        <!-- out of canvas -->
+        <!-- @if ( shoppingList ) {
+            <app-shopping-list 
+                [shoppingListMain]="shoppingList"
+                (onClose)="onCloseShoppingListModal()"
+                class="modal"
+            ></app-shopping-list>
+        } -->
+    </main>
+}

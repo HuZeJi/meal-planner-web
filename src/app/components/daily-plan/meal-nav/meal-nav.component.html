@@ -1,0 +1,33 @@
+@if ( dailyPlan ) {
+    <nav>
+        <ul>        
+            <li class="selected">
+                <p>Breakfast</p>
+                <div class="times">
+                    <small>8:00 am</small>
+                    <div>-</div>
+                    <small>9:00 am</small>
+                </div>
+            </li>    
+            @for ( meal of dailyPlan.meals; track $index) {
+                <li (click)="onSelectMeal( meal )">
+                    <p>{{ meal.name }}</p>
+                    <div class="times">
+                        <small>8:00 am</small>
+                        <div>-</div>
+                        <small>9:00 am</small>
+                    </div>
+                </li>
+            }
+            <li>
+                <p>{{ 'Dinner' }}</p>
+                <div class="times">
+                    <small>8:00 am</small>
+                    <div>-</div>
+                    <small>9:00 am</small>
+                </div>
+            </li>
+        </ul>
+    </nav>
+}
+

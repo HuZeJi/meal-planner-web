@@ -1,0 +1,16 @@
+<!-- @if ( weeklyPlan ) { -->
+    <main>
+        <!-- TODO: set white color to the date picker icon -->
+        <div class="date_filter">
+            <input type="date" name="date_filter" id="date_filter" [ngModel]="selectedDateFormatted" (ngModelChange)="onChangeDateSearch( $event )">
+        </div>
+        <div class="date_range">
+            <button (click)="onMoveWeek( -1 )"><</button>
+            <p>{{ weekStartDate | date: 'dd / MM / yyyy' }} - {{ weekEndDate | date: 'dd / MM / yyyy' }}</p>
+            <button (click)="onMoveWeek( 1 )">></button>
+        </div>
+        <div class="today_button">
+            <button (click)="onMoveToToday()">today</button>
+        </div>
+    </main>
+<!-- } -->

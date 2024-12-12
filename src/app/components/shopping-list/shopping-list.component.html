@@ -1,0 +1,18 @@
+@if ( shoppingList ) {
+    <main>
+        <ul>
+            @for ( shoppingListItem of shoppingList; track $index) {
+                <li>
+                    <strong>{{ shoppingListItem.name }}</strong> | 
+                    <p>{{ shoppingListItem.quantity }}{{ shoppingListItem.quantityUnit }}</p> |
+                    <small>{{ shoppingListItem.approximateSubTotal.quantity | currency: shoppingListItem.approximateSubTotal.currency }}</small> |
+                    @for ( requiredAtItem of shoppingListItem.requiredAt; track $index ) {
+                        <p>{{ requiredAtItem.day }}-{{ requiredAtItem.mealTime }}</p> |
+                    }
+                    <strong>{{ shoppingListItem.ingredientType }}</strong>
+                </li>
+            }
+        </ul>
+        <button (click)="onCloseModal()">🔙 back</button>
+    </main>
+}

@@ -1,0 +1,21 @@
+@if ( dailyPlan ) {
+    <main>
+        <h1>{{ dailyPlan.dayOfWeek }}</h1>
+        <small>{{ dailyPlan.date | date: 'dd-MM-YYYY' }}</small>
+        <ul>
+            <li *ngFor="let meal of dailyPlan.meals">
+                <h3>{{ meal.name }}</h3>
+                <p>{{ meal.description }}</p>
+                <p>{{ meal.ingredients }}</p>
+                <p>{{ meal.recipe }}</p>
+                <img [src]="meal.image" alt="no image">
+                <ul>
+                    <li *ngFor="let tag of meal.tags">
+                        <p>{{ tag }}</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <button (click)="onClose()">close</button>
+    </main>
+}

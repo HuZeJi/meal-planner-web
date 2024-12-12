@@ -1,0 +1,72 @@
+.header{
+    width: calc( 100% - 30px );
+    height: 150px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    padding: 20px;
+    
+    margin: 15px;
+
+    background-color: #AC79F2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    * { 
+        color: white; 
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-weight: 300;
+        font-size: 2rem;
+    }
+
+    small { 
+        font-weight: 200;
+        font-size: .7rem;
+    }
+
+    .nutritional-information{
+        margin-top: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .fact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: calc( 100% - 50px );
+    height: 50px;
+    max-width: 500px;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+}

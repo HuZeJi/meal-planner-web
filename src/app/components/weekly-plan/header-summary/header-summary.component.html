@@ -1,0 +1,45 @@
+@if ( dailyPlan ) {
+    <main>
+        <div class="header">
+            <h1 class="title">{{ dailyPlan.dayOfWeek }}</h1>
+            <!-- TODO: add the date format as a configuration -->
+            <small class="date">{{ dailyPlan.date | date: 'dd / MM / yyyy' }}</small>
+            <div class="nutritional-information">
+                <div class="fact">
+                    <strong>160</strong>
+                    <small>calories</small>
+                </div>
+                <div class="fact">
+                    <strong>1g</strong>
+                    <small>protein</small>
+                </div>
+                <div class="fact">
+                    <strong>26g</strong>
+                    <small>carbs</small>
+                </div>
+                <div class="fact">
+                    <strong>160g</strong>
+                    <small>fat</small>
+                </div>
+            </div>
+            <!-- <div class="nutritional-information">
+                @for ( fact of dailyPlan.nutritionalInfo; track $index) {
+                    <div class="fact">
+                        <strong>{{ fact.value }}</strong>
+                        <small>{{ fact.label }}</small>
+                    </div>
+                }
+            </div> -->
+        </div>
+        <div class="header-actions">
+            <!-- delete -->
+            <button class="btn-circle orange"></button>
+            <!-- update -->
+            <button class="btn-circle blue"></button>
+            <!-- star (?) -->
+            <button class="btn-circle green"></button>
+            <!-- shopping list -->
+            <button class="btn-cilinder grey"></button>
+        </div>
+    </main>
+}

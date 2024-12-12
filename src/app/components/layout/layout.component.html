@@ -1,0 +1,9 @@
+<main>
+    @if ( menuIndex == 0 ) {
+        <app-dashboard></app-dashboard>
+    }
+    @if ( menuIndex == 1 ) {
+        <app-weekly-plan></app-weekly-plan>
+    }
+    <app-nav-menu (goTo)="onGoTo( $event )"></app-nav-menu>
+</main>
